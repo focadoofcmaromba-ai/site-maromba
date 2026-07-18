@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rastreio de Encomendas - DYXON MAROMBA</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- MENU CENTRALIZADO -->
+  <div id="navbar-container"></div>
+
+  <!-- HERO -->
+  <section class="page-hero">
+    <div class="hero-content">
+            <div class="hero-badge">ENTREGAS SEGURAS E RÁPIDAS</div>
+      <h1>Rastreie sua <span class="highlight">encomenda</span></h1>
+    </div>
+  </section>
+
+  <!-- RASTREIO -->
+  <section class="section" style="padding-top: 40px; padding-bottom: 80px;">
+    <div style="max-width: 620px; margin: 0 auto;">
+
+      <div class="tracking-single">
+        <div class="track-input-group" style="max-width: 460px; margin: 0 auto;">
+          <input type="text" id="trackCode" class="track-input" 
+                 placeholder="Cole aqui o código de rastreio..." 
+                 maxlength="25">
+        </div>
+        <button id="trackBtn" class="btn-track" style="max-width: 460px;
+
+                margin: 20px auto 0;">
+            Consultar Rastreio
+          </button>
+        </div>
+
+        <div id="trackingStatus" class="tracking-status"></div>
+
+<div id="footer-container"></div>
+
+<script src="script.js"></script>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const btn = document.getElementById("trackBtn");
+    const input = document.getElementById("trackCode");
+
+    if(!btn || !input) return;
+
+    btn.addEventListener("click", rastrearEncomenda);
+
+    input.addEventListener("keypress", function(e){
+
+        if(e.key === "Enter"){
+            rastrearEncomenda();
+        }
+
+    });
+
+});
+
+function rastrearEncomenda(){
+
+    let codigo = document
+        .getElementById("trackCode")
+        .value
+        .trim()
+        .toUpperCase();
+
+        mostrarStatus("", "");
+
+    if(codigo === ""){
+
+        mostrarStatus(
+    "warning",
+    "Digite um código de rastreio."
+);
+
+return;
+
+    }
+
+    detectarTransportadora(codigo);
+
+}
+
+function mostrarStatus(tipo, mensagem){
+
+    const status =
+        document.getElementById("trackingStatus");
+
+    status.className = "tracking-status";
+
+    if(tipo){
+
+        status.classList.add(tipo);
+
+    }
+
+    status.textContent = mensagem;
+
+}
+
+function detectarTransportadora(codigo){
+
+    const transportadoras = [
+
+    {
+        nome: "Correios",
+        slug: "correios",
+        regex: /^[A-Z]{2}[0-9]{9}BR$/i
+    },
+
+    {
+        nome: "Jadlog",
+        slug: "jadlog",
+        regex: /^[0-9]{9,16}$/
+    },
+
+    {
+        nome: "Loggi",
+        slug: "loggi",
+        regex: /^(LG|LOG)/i
+    },
+
+    {
+        nome: "J&T Express",
+        slug: "jet",
+        regex: /^(JT|JTEX)/i
+    },
+
+    {
+        nome: "Total Express",
+        slug: "total-express",
+        regex: /^(TX|TE|TEX)/i
+    }
+
+];
+
+    for(const t of transportadoras){
+
+        if(t.regex.test(codigo)){
+
+mostrarStatus(
+    "success",
+    "Transportadora identificada (" + t.nome + "). Redirecionando..."
+);
+
+setTimeout(() => {
+
+    window.location.href =
+        "https://melhorrastreio.com.br/app/" +
+        t.slug +
+        "/" +
+        encodeURIComponent(codigo);
+
+}, 800);
+
+return;
+
+        }
+
+    }
+
+    mostrarStatus(
+    "error",
+    "🚫Código não encontrado."
+);
+
+}
+
+</script>
+
+<script>
+fetch("navbar.html")
+  .then(res => res.text())
+  .then(html => {
+
+      const container = document.getElementById("navbar-container");
+
+      if (!container.innerHTML.trim()) {
+
+          container.innerHTML = html;
+
+          const script = container.querySelector("script");
+
+          if (script) {
+
+              const novoScript = document.createElement("script");
+
+              novoScript.textContent = script.textContent;
+
+              document.body.appendChild(novoScript);
+
+              script.remove();
+
+          }
+
+      }
+
+  })
+  .catch(err => console.error("Erro ao carregar navbar:", err));
+</script>
+
+<script>
+fetch("footer.html")
+  .then(res => res.text())
+  .then(html => {
+
+      const container = document.getElementById("footer-container");
+
+      if (container) {
+          container.innerHTML = html;
+      }
+
+  })
+  .catch(err => console.error("Erro ao carregar footer:", err));
+</script>
+
+<!-- WhatsApp Flutuante -->
+<div onclick="window.open('https://wa.me/5596999999999','_blank')"
+     class="fixed bottom-6 right-6 w-16 h-16 bg-green-500 hover:bg-green-400 transition-all duration-300 rounded-full flex items-center justify-center shadow-2xl shadow-green-500/50 cursor-pointer z-50">
+
+    <i class="fa-brands fa-whatsapp text-white text-4xl"></i>
+
+</div>
+
+<script src="js/notifications.js"></script>
+
+</body>
+</html>

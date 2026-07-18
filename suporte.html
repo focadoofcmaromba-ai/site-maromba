@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Últimos Vídeos - DYXON MAROMBA</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+    body { font-family: 'Roboto Mono', monospace; }
+    .card-hover { transition: all 0.3s; }
+    .card-hover:hover { transform: translateY(-8px); box-shadow: 0 0 25px rgba(0, 255, 65, 0.4); }
+  </style>
+</head>
+<body class="bg-zinc-950 text-emerald-400 p-8">
+  <div class="max-w-7xl mx-auto">
+    <h1 class="text-4xl font-bold text-white mb-10 flex items-center gap-4"><i class="fa-solid fa-youtube text-red-500"></i> ÚLTIMOS VÍDEOS - DYXON MAROMBA</h1>
+    <div id="publicPreview" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+  </div>
+  <script>
+    const API_KEY = "AIzaSyA6D4Pf1PMWUFH3GKG68dmxdfjCkd9MSp8";
+    const canais = [{"name":"Renato Cariani","id":"UCPX0gLduKAfgr-HJENa7CFw"},{"name":"Paulo Muzy","id":"UCUOsr03iLj627hJm55cmIPw"},{"name":"Leo Stronda","id":"UC6gJAnIhDn2Fy_jZfICmgSA"},{"name":"Growth TV","id":"UCGfrC6R2PSMeXv4hdhONB6Q"},{"name":"Leandro Twin","id":"UCPlemwX82_QEWRDC6yYnOCg"},{"name":"Escola Maromba","id":"UCbzPEdQRN97S-VvDGXWwh4Q"}];
+    // O resto do código público tá limpo agora - testa o download
+    async function loadVideos() {
+      const container = document.getElementById("publicPreview");
+      container.innerHTML = "<p class='text-emerald-400'>Carregando vídeos...</p>";
+      let html = "";
+      for (let canal of canais) {
+        try {
+          const res = await fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${canal.id}&maxResults=1&order=date&type=video&key=${API_KEY}`);
+          const data = await res.json();
+          if (data.items && data.items[0]) {
+            const v = data.items[0];
+            html += `<div class="bg-zinc-900 border border-emerald-500 rounded-xl overflow-hidden card-hover">
+              <img src="${v.snippet.thumbnails.medium.url}" class="w-full">
+              <div class="p-4">
+                <h3 class="font-bold text-white">${canal.name}</h3>
+                <p class="text-xs text-emerald-600 line-clamp-2 mt-2">${v.snippet.title}</p>
+                <a href="https://youtu.be/${v.id.videoId}" target="_blank" class="mt-4 block text-center bg-emerald-500 text-black py-3 rounded font-bold text-sm">ASSISTIR NO YOUTUBE</a>
+              </div>
+            </div>`;
+          }
+        } catch(e) {}
+      }
+      container.innerHTML = html || "<p class='text-red-400'>Sem vídeos ou chave inválida.</p>";
+    }
+    window.onload = loadVideos;
+  </script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "version": 1,
+        "tipo": "transformacao",
+        "titulo": "Nova transformação publicada",
+        "descricao": "Confira o novo resultado na página de Transformações.",
+        "link": "antes-depois.html",
+        "data": "2026-07-13T10:00:00"
+    },
+    {
+        "id": 2,
+        "version": 1,
+        "tipo": "youtube",
+        "titulo": "Novo vídeo disponível",
+        "descricao": "Um novo vídeo foi adicionado à nossa página do YouTube.",
+        "link": "youtube.html",
+        "data": "2026-07-13T11:00:00"
+    }
+]

@@ -1,0 +1,28 @@
+# ==========================================
+# robots.txt
+# Sistema de Artigos
+# ==========================================
+
+User-agent: *
+
+# Pastas protegidas
+Disallow: /config/
+Disallow: /includes/
+Disallow: /data/
+Disallow: /backup/
+Disallow: /logs/
+
+# Arquivos internos
+Disallow: /composer.json
+Disallow: /composer.lock
+Disallow: /package.json
+Disallow: /package-lock.json
+Disallow: /.env
+Disallow: /.git/
+Disallow: /.gitignore
+
+# Permite indexação do restante do site
+Allow: /
+
+# Sitemap principal
+Sitemap: https://seudominio.com/sitemap.xml

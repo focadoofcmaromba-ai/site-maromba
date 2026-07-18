@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DYXON MAROMBA - Treine como um Monstro</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Poppins:wght@700&amp;display=swap');
+    
+    body { font-family: 'Inter', system-ui, sans-serif; }
+    
+    .hero-bg { 
+      background: linear-gradient(180deg, #1a0000 0%, #0a0a0a 100%);
+    }
+    
+    .section-title {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+    }
+
+    .live-dot {
+      display: inline-block; width: 15px; height: 15px; background: #22c55e; border-radius: 50%;
+      box-shadow: 0 0 12px #22c55e, 0 0 26px #22c55e;
+      animation: live-pulse 1.4s infinite ease-in-out; vertical-align: middle; margin-right: 12px;
+    }
+    
+    @keyframes live-pulse { 
+      0%, 100% { opacity: 1; transform: scale(1); } 
+      50% { opacity: 0.35; transform: scale(0.65); } 
+    }
+
+    .maromba-card {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .maromba-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    }
+
+    .nav-active {
+      background: #7f1d1d;
+      color: white;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body class="bg-[#0a0a0a] text-white">
+
+  <!-- NAVBAR -->
+  <div id="navbar-container"></div>
+
+  <!-- HERO -->
+<section class="hero-banner">
+
+    <div class="banner-overlay">
+
+        <div class="banner-wrapper">
+
+            <img
+                id="bannerA"
+                src="assets/banners/desktop/BANNER1DYXON.png"
+                class="banner-image active"
+                alt="Banner DYXON">
+
+            <img
+                id="bannerB"
+                src=""
+                class="banner-image"
+                alt="Banner DYXON">
+
+        </div>
+
+        <button id="bannerPrev" class="banner-arrow banner-prev">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <button id="bannerNext" class="banner-arrow banner-next">
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+        <div id="bannerIndicators" class="banner-indicators"></div>
+
+    </div>
+
+</section>
+
+<section class="home-banner-buttons">
+
+    <a href="produtos.html" class="btn btn-primary">
+        Ver Produtos
+    </a>
+
+    <a href="antes-depois.html" class="btn btn-outline">
+        Ver Transformações
+    </a>
+
+</section>
+
+    <!-- WhatsApp Flutuante -->
+    <div onclick="window.open('https://wa.me/5511999999999','_blank')" 
+         class="fixed bottom-6 right-6 w-16 h-16 bg-green-500 hover:bg-green-400 transition-all rounded-full flex items-center justify-center shadow-2xl shadow-green-500/50 cursor-pointer z-50">
+      <i class="fa-brands fa-whatsapp text-4xl"></i>
+    </div>
+
+  <!-- DESTAQUES -->
+  <section class="max-w-7xl mx-auto px-6 pt-8 pb-20">
+    <div class="text-center mb-12">
+      <h2 class="section-title text-4xl mb-3">Destaques da Semana</h2>
+      <p class="text-zinc-400">Os produtos mais vendidos pelos monstros da DYXON</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <!-- Card 1 -->
+      <div class="maromba-card bg-zinc-900 border border-zinc-800 rounded-2xl p-6">
+        <div class="flex justify-between items-start mb-4">
+          <div class="text-5xl">💪</div>
+          <div class="px-3 py-1 bg-emerald-900 text-emerald-400 text-xs font-bold rounded-full">MAIS VENDIDO</div>
+        </div>
+        <h3 class="text-2xl font-bold mb-1">Whey Protein Isolate</h3>
+        <p class="text-zinc-400 mb-4">27g de proteína por dose • 2kg</p>
+        <div class="flex items-baseline gap-2">
+          <span class="text-3xl font-black">R$ 129,90</span>
+          <span class="text-sm line-through text-zinc-500">R$ 169,90</span>
+        </div>
+        <a href="produtos.html" class="mt-4 block text-center bg-red-600 hover:bg-red-500 transition py-3 rounded-xl font-bold">Comprar agora</a>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="maromba-card bg-zinc-900 border border-zinc-800 rounded-2xl p-6">
+        <div class="flex justify-between items-start mb-4">
+          <div class="text-5xl">⚡</div>
+          <div class="px-3 py-1 bg-amber-900 text-amber-400 text-xs font-bold rounded-full">PROMOÇÃO</div>
+        </div>
+        <h3 class="text-2xl font-bold mb-1">Creatina Monohidratada</h3>
+        <p class="text-zinc-400 mb-4">300g • 100% pura</p>
+        <div class="flex items-baseline gap-2">
+          <span class="text-3xl font-black">R$ 49,90</span>
+        </div>
+        <a href="produtos.html" class="mt-4 block text-center bg-red-600 hover:bg-red-500 transition py-3 rounded-xl font-bold">Comprar agora</a>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="maromba-card bg-zinc-900 border border-zinc-800 rounded-2xl p-6">
+        <div class="flex justify-between items-start mb-4">
+          <div class="text-5xl">🔥</div>
+          <div class="px-3 py-1 bg-red-900 text-red-400 text-xs font-bold rounded-full">LANÇAMENTO</div>
+        </div>
+        <h3 class="text-2xl font-bold mb-1">Pré-Treino Monster</h3>
+        <p class="text-zinc-400 mb-4">400g • Sabor Frutas Vermelhas</p>
+        <div class="flex items-baseline gap-2">
+          <span class="text-3xl font-black">R$ 89,90</span>
+        </div>
+        <a href="produtos.html" class="mt-4 block text-center bg-red-600 hover:bg-red-500 transition py-3 rounded-xl font-bold">Comprar agora</a>
+      </div>
+    </div>
+  </section>
+
+    <!-- POR QUE ESCOLHER A DYXON -->
+  <section class="bg-zinc-950 py-20">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 class="section-title text-4xl mb-3">Qual o nosso diferencial?</h2>
+        <p class="text-zinc-400 max-w-md mx-auto">Resultados garantidos para quem usa nossos produtos</p>
+      </div>
+
+      <div class="grid md:grid-cols-4 gap-6">
+        <div class="bg-zinc-900 border border-zinc-800 rounded-2xl p-6 text-center">
+          <div class="w-14 h-14 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
+            <i class="fa-solid fa-flask text-2xl"></i>
+          </div>
+          <h4 class="font-bold text-xl mb-2">Fórmulas Premium</h4>
+          <p class="text-zinc-400 text-sm">Matéria prima de alta qualidade testada e aprovada</p>
+        </div>
+        
+        <div class="bg-zinc-900 border border-zinc-800 rounded-2xl p-6 text-center">
+          <div class="w-14 h-14 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
+            <i class="fa-solid fa-truck text-2xl"></i>
+          </div>
+          <h4 class="font-bold text-xl mb-2">Entrega Segura</h4>
+          <p class="text-zinc-400 text-sm">Garantimos que receberá sua encomenda com segurança</p>
+        </div>
+        
+        <div class="bg-zinc-900 border border-zinc-800 rounded-2xl p-6 text-center">
+          <div class="w-14 h-14 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
+            <i class="fa-solid fa-shield-halved text-2xl"></i>
+          </div>
+          <h4 class="font-bold text-xl mb-2">+7 anos no mercado</h4>
+          <p class="text-zinc-400 text-sm">A anos mantendo a mesma qualidade nos produtos</p>
+        </div>
+        
+        <div class="bg-zinc-900 border border-zinc-800 rounded-2xl p-6 text-center">
+          <div class="w-14 h-14 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
+            <i class="fa-solid fa-users text-2xl"></i>
+          </div>
+          <h4 class="font-bold text-xl mb-2">Comunidade</h4>
+          <p class="text-zinc-400 text-sm">Temos vários grupos com clientes satifeitos</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRANSFORMAÇÕES -->
+  <section class="max-w-7xl mx-auto px-6 py-20">
+    <div class="text-center mb-12">
+      <h2 class="section-title text-4xl mb-3">Antes e depois</h2>
+      <p class="text-zinc-400">Resultados de quem nossos produtos</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="bg-zinc-900 border border-zinc-800 rounded-2xl overflow-hidden">
+        <div class="h-64 bg-zinc-800 flex items-center justify-center text-6xl">📸</div>
+        <div class="p-6">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="font-bold">Carlos Mendes</div>
+            <div class="text-xs bg-emerald-900 text-emerald-400 px-2 py-0.5 rounded">+18kg</div>
+          </div>
+          <p class="text-sm text-zinc-400">"Em 4 meses ganhei 8kg de massa magra usando Whey Isolate + Creatina da DYXON."</p>
+        </div>
+      </div>
+
+      <div class="bg-zinc-900 border border-zinc-800 rounded-2xl overflow-hidden">
+        <div class="h-64 bg-zinc-800 flex items-center justify-center text-6xl">📸</div>
+        <div class="p-6">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="font-bold">Ana Paula Silva</div>
+            <div class="text-xs bg-emerald-900 text-emerald-400 px-2 py-0.5 rounded">-12% gordura</div>
+          </div>
+          <p class="text-sm text-zinc-400">"O Pré-Treino Monster me deu energia pra treinar pesado e secar de verdade."</p>
+        </div>
+      </div>
+
+      <div class="bg-zinc-900 border border-zinc-800 rounded-2xl overflow-hidden">
+        <div class="h-64 bg-zinc-800 flex items-center justify-center text-6xl">📸</div>
+        <div class="p-6">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="font-bold">João Vitor Lima</div>
+            <div class="text-xs bg-emerald-900 text-emerald-400 px-2 py-0.5 rounded">+22kg</div>
+          </div>
+          <p class="text-sm text-zinc-400">"Melhor investimento que fiz na minha vida. Resultados que todo mundo nota."</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mt-8">
+      <a href="antes-depois.html" class="inline-flex items-center gap-2 text-red-400 hover:text-red-300 font-bold">
+        Ver todas as transformações <i class="fa-solid fa-arrow-right"></i>
+      </a>
+    </div>
+  </section>
+
+  <section class="faq-section">
+
+    <div class="section-header">
+
+        <span class="hero-badge">
+            ❓ DÚVIDAS FREQUENTES
+        </span>
+
+        <h2>
+
+            Perguntas
+            <span class="highlight">Frequentes</span>
+
+        </h2>
+
+        <p>
+
+            Tire suas principais dúvidas antes de adquirir nossos produtos.
+
+        </p>
+
+    </div>
+
+    <div class="faq-container">
+
+        <div class="faq-item">
+
+            <button class="faq-question">
+
+                Os produtos são originais?
+
+                <span>+</span>
+
+            </button>
+
+            <div class="faq-answer">
+
+                Trabalhamos apenas com produtos originais e laboratórios confiáveis.
+
+            </div>
+
+        </div>
+
+        <div class="faq-item">
+
+            <button class="faq-question">
+
+                Como faço para acompanhar meu pedido?
+
+                <span>+</span>
+
+            </button>
+
+            <div class="faq-answer">
+
+                Basta acessar a página de Rastreio e informar o código enviado após o despacho.
+
+            </div>
+
+        </div>
+
+        <div class="faq-item">
+
+            <button class="faq-question">
+
+                Qual o prazo de entrega?
+
+                <span>+</span>
+
+            </button>
+
+            <div class="faq-answer">
+
+                O prazo varia conforme a transportadora que está enviando o produto.
+
+            </div>
+
+        </div>
+
+        <div class="faq-item">
+
+            <button class="faq-question">
+
+                Posso falar pelo WhatsApp?
+
+                <span>+</span>
+
+            </button>
+
+            <div class="faq-answer">
+
+                Sim. Nosso suporte está disponível para esclarecer dúvidas antes e após a compra.
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<div id="footer-container"></div>
+
+  <script>
+    // Carrega navbar
+    fetch('navbar.html')
+  .then(res => res.text())
+  .then(html => {
+
+      const container = document.getElementById('navbar-container');
+
+      if (!container.innerHTML.trim()) {
+
+          container.innerHTML = html;
+
+          container.innerHTML = html;
+
+const script = container.querySelector("script");
+
+if (script) {
+
+    const novoScript = document.createElement("script");
+
+    novoScript.textContent = script.textContent;
+
+    document.body.appendChild(novoScript);
+
+    script.remove();
+
+}
+
+const notificationScript = document.createElement("script");
+notificationScript.src = "js/notifications.js";
+document.body.appendChild(notificationScript);
+
+      }
+
+  })
+  .catch(err => console.error('Erro ao carregar navbar:', err));
+
+    // Tailwind script
+    function initializeTailwind() {
+      document.documentElement.style.setProperty('--accent', '#ef4444');
+    }
+    window.onload = initializeTailwind;
+
+    </script>
+
+<script>
+fetch("footer.html")
+  .then(res => res.text())
+  .then(html => {
+
+      const container = document.getElementById("footer-container");
+
+      if (container) {
+          container.innerHTML = html;
+      }
+
+  })
+  .catch(err => console.error("Erro ao carregar footer:", err));
+</script>
+
+<script>
+
+document.querySelectorAll(".faq-question").forEach(botao=>{
+
+    botao.addEventListener("click",()=>{
+
+        const atual=botao.parentElement;
+
+        document.querySelectorAll(".faq-item").forEach(item=>{
+
+            if(item!==atual){
+
+                item.classList.remove("active");
+
+            }
+
+        });
+
+        atual.classList.toggle("active");
+
+    });
+
+});
+
+</script>
+
+<script src="js/banner.js"></script>
+
+</body>
+</html>

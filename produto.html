@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Produto | DYXON MAROMBA</title>
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link rel="stylesheet"
+          href="style.css">
+
+<link rel="stylesheet" href="produto.css">
+
+</head>
+
+<body>
+
+<div id="navbar-container"></div>
+
+<section class="produto-banner">
+
+    <div class="container">
+
+        <div class="breadcrumb">
+
+            <a href="index.html">
+                Início
+            </a>
+
+            <span>/</span>
+
+            <a href="produtos.html">
+                Produtos
+            </a>
+
+            <span>/</span>
+
+            <span id="breadcrumbProduto">
+                Produto
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="produto-detalhes">
+
+    <div class="container">
+
+        <div class="produto-grid">
+
+            <div class="produto-imagem">
+
+                <img
+                    id="produtoImagem"
+                    src=""
+                    alt="Produto">
+
+            </div>
+
+            <div class="produto-info">
+
+                <span
+                    id="produtoCategoria"
+                    class="produto-categoria">
+                </span>
+
+                <h1 id="produtoNome"></h1>
+
+                <div class="produto-preco">
+
+    <div class="produto-preco-info">
+
+        <div id="produtoPreco" class="preco-atual">
+            R$ 190,00
+        </div>
+
+        <div class="preco-antigo-linha">
+
+            <div id="produtoPrecoAntigo" class="preco-antigo">
+                R$ 210,00
+            </div>
+
+            <div id="descontoProduto" class="produto-desconto">
+                -10%
+            </div>
+
+        </div>
+
+        <div id="economiaProduto" class="produto-economia">
+            Economize R$ 20,00
+        </div>
+
+<div class="campo-compra">
+
+    <label for="variacao">
+
+        <i class="fas fa-list"></i>
+
+        Opção
+
+    </label>
+
+    <select id="variacao">
+
+    </select>
+
+</div>
+
+    </div>
+
+</div>
+
+<div class="compra-box">
+
+    <div class="compra-card">
+
+        <div class="campo-compra">
+
+            <label>
+    <i class="fas fa-cubes"></i>
+    Quantidade
+</label>
+
+            <div class="quantidade-controle">
+
+                <button
+                    type="button"
+                    id="btnMenos"
+                    class="btn-quantidade">−</button>
+
+                <input
+                    type="number"
+                    id="quantidade"
+                    min="1"
+                    value="1">
+
+                <button
+                    type="button"
+                    id="btnMais"
+                    class="btn-quantidade">+</button>
+
+            </div>
+
+        </div>
+
+        <div class="campo-compra">
+
+            <label for="cep">
+    <i class="fas fa-location-dot"></i>
+    CEP
+</label>
+
+            <input
+                type="text"
+                id="cep"
+                maxlength="9"
+                placeholder="00000-000">
+
+            <p id="avisoCep" class="aviso-cep"></p>
+
+        </div>
+
+        <div class="resumo-compra">
+
+            <div class="linha-resumo">
+
+                <span>
+    <i class="fas fa-receipt"></i>
+    Subtotal
+</span>
+
+                <strong id="subtotal">
+                    R$ 0,00
+                </strong>
+
+            </div>
+
+            <div class="linha-resumo">
+
+                <span>
+    <i class="fas fa-truck"></i>
+    Frete
+</span>
+
+                <strong id="frete">
+                    Informe o CEP
+                </strong>
+
+            </div>
+
+            <div class="linha-resumo total">
+
+                <span>
+    <i class="fas fa-wallet"></i>
+    Total
+</span>
+
+                <strong id="total">
+                    R$ 0,00
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<p id="produtoDescricao" class="produto-descricao"></p>
+
+<div class="produto-botoes">
+
+    <button
+        id="btnCarrinho"
+        class="btn btn-primary">
+
+        <i class="fas fa-cart-plus"></i>
+        Adicionar ao Carrinho
+
+    </button>
+
+    <a
+        id="btnWhatsapp"
+        target="_blank"
+        class="btn btn-outline">
+
+        Comprar pelo WhatsApp
+
+    </a>
+
+    <a
+        href="produtos.html"
+        class="btn btn-outline">
+
+        Voltar
+
+    </a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="produto-informacoes">
+
+    <div class="container">
+
+        <div class="info-grid">
+
+            <div class="info-card">
+
+                <h2>Benefícios</h2>
+
+                <ul id="produtoBeneficios"></ul>
+
+            </div>
+
+            <div class="info-card">
+
+                <h2>Modo de Uso</h2>
+
+                <div id="produtoModoUso"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="produto-tabela">
+
+    <div class="container">
+
+        <h2>Informações Nutricionais</h2>
+
+        <div class="tabela-responsive">
+
+            <table id="tabelaNutricional"></table>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="produto-descricao-completa">
+
+    <div class="container">
+
+        <h2>Descrição Completa</h2>
+
+        <div id="descricaoCompleta"></div>
+
+    </div>
+
+</section>
+
+<section class="produto-especificacoes">
+
+    <div class="container">
+
+        <h2>Especificações</h2>
+
+        <div class="especificacoes-grid">
+
+            <div class="especificacao-item">
+
+                <i class="fas fa-dumbbell"></i>
+
+                <h4>Marca</h4>
+
+                <span id="produtoMarca"></span>
+
+            </div>
+
+            <div class="especificacao-item">
+
+                <i class="fas fa-weight-hanging"></i>
+
+                <h4>Peso</h4>
+
+                <span id="produtoPeso"></span>
+
+            </div>
+
+            <div class="especificacao-item">
+
+                <i class="fas fa-box-open"></i>
+
+                <h4>Conteúdo</h4>
+
+                <span id="produtoConteudo"></span>
+
+            </div>
+
+            <div class="especificacao-item">
+
+                <i class="fas fa-calendar-check"></i>
+
+                <h4>Validade</h4>
+
+                <span id="produtoValidade"></span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="produtos-relacionados">
+
+    <div class="container">
+
+        <h2>Produtos Relacionados</h2>
+
+        <div id="produtosRelacionados"
+             class="products-grid">
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="cta-produto">
+
+    <div class="container">
+
+        <h2>Gostou deste produto?</h2>
+
+        <p>
+
+            Fale conosco pelo WhatsApp e faça seu pedido.
+
+        </p>
+
+        <a id="btnWhatsapp2"
+           target="_blank"
+           class="btn btn-primary">
+
+            Comprar Agora
+
+        </a>
+
+    </div>
+
+</section>
+
+<div id="footer-container"></div>
+
+<script>
+fetch("navbar.html")
+    .then(res => res.text())
+    .then(html => {
+
+        const container = document.getElementById("navbar-container");
+
+        if (!container.innerHTML.trim()) {
+
+            container.innerHTML = html;
+
+            const script = container.querySelector("script");
+
+            if (script) {
+
+                const novoScript = document.createElement("script");
+
+                novoScript.textContent = script.textContent;
+
+                document.body.appendChild(novoScript);
+
+                script.remove();
+
+            }
+
+        }
+
+    })
+    .catch(err => console.error("Erro ao carregar navbar:", err));
+</script>
+
+<script>
+fetch("footer.html")
+    .then(res => res.text())
+    .then(html => {
+
+        const container = document.getElementById("footer-container");
+
+        if (container) {
+
+            container.innerHTML = html;
+
+        }
+
+    })
+    .catch(err => console.error("Erro ao carregar footer:", err));
+</script>
+
+<!-- WhatsApp Flutuante -->
+
+<a href="https://wa.me/5596999999999"
+   target="_blank"
+   class="whatsapp-float">
+
+    <i class="fa-brands fa-whatsapp"></i>
+
+</a>
+
+<script src="produto.js"></script>
+
+<script src="js/notifications.js"></script>
+
+</body>
+
+</html>
+

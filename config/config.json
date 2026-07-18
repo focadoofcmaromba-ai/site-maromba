@@ -1,0 +1,67 @@
+{
+    "menuItems": [
+        {
+            "name": "Início",
+            "link": "index.html",
+            "icon": "🏠",
+            "font": "Inter",
+            "color": "#ffffff"
+        },
+        {
+            "name": "Produtos",
+            "link": "produtos.html",
+            "icon": "💪",
+            "font": "Inter",
+            "color": "#ffffff"
+        },
+        {
+            "name": "Antes e Depois",
+            "link": "antes-depois.html",
+            "icon": "📸",
+            "font": "Inter",
+            "color": "#ffffff"
+        },
+        {
+            "name": "YouTube",
+            "link": "youtube.html",
+            "icon": "▶️",
+            "font": "Inter",
+            "color": "#ffffff"
+        },
+        {
+            "name": "Rastreio",
+            "link": "rastreio.html",
+            "icon": "📦",
+            "font": "Inter",
+            "color": "#ffffff"
+        },
+        {
+            "name": "Suporte",
+            "link": "suporte.html",
+            "icon": "🎧",
+            "font": "Inter",
+            "color": "#ffffff"
+        },
+        {
+            "name": "Novo Item",
+            "link": "#",
+            "icon": "📄",
+            "font": "Inter",
+            "color": "#ffffff"
+        }
+    ],
+    "logoData": {
+        "text": "DYXON",
+        "image": null,
+        "font": "Inter",
+        "textColor": "#ffffff"
+    },
+    "footerData": {
+        "titulo": "DYXON MAROMBA",
+        "descricao": "Seu portal de musculação, nutrição e suplementação.",
+        "redes": [],
+        "copyright": "© 2026 DYXON MAROMBA. Todos os direitos reservados."
+    },
+    "beforeAfterData": [],
+    "canais": []
+}

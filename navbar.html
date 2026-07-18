@@ -1,0 +1,72 @@
+<!-- navbar.html -->
+
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="logo">
+        <img src="assets/dyxon2perfil.png" alt="Logo" class="logo-image">
+    </a>
+
+    <div class="nav-links">
+      <a href="index.html">🏠 Início</a>
+      <a href="produtos.html">💪 Produtos</a>
+      <a href="antes-depois.html">📸 Antes e Depois</a>
+      <a href="youtube.html">▶️ YouTube</a>
+      <a href="rastreio.html">📦 Rastreio</a>
+      <a href="suporte.html">🎧 Suporte</a>
+    </div>
+
+    <div class="nav-actions">
+
+  <div id="notificationRoot"></div>
+
+  <div class="hamburger" id="hamburgerBtn">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+</div>
+  </div>
+
+  <!-- MENU MOBILE -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">🏠 Início</a>
+    <a href="produtos.html">💪 Produtos</a>
+    <a href="antes-depois.html">📸 Antes e Depois</a>
+    <a href="youtube.html">▶️ YouTube</a>
+    <a href="rastreio.html">📦 Rastreio</a>
+    <a href="suporte.html">🎧 Suporte</a>
+  </div>
+</nav>
+
+<script>
+  function initNavbar() {
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    
+    document.querySelectorAll('.nav-links a, .mobile-menu a').forEach(link => {
+      const href = link.getAttribute('href');
+      if (href === currentPage) {
+        link.classList.add('active');
+      }
+    });
+
+    const hamburger = document.getElementById('hamburgerBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    if (hamburger && mobileMenu) {
+      hamburger.addEventListener('click', () => {
+          mobileMenu.classList.toggle('show');
+      });
+    }
+
+    // Fecha menu mobile ao clicar em link
+    document.querySelectorAll('.mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('show');
+      });
+    });
+  }
+
+  // Executa depois que o navbar é injetado
+  initNavbar();
+</script>
