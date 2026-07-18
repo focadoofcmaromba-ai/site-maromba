@@ -1249,28 +1249,51 @@ button {
    WHATSAPP FLUTUANTE
 ========================= */
 
+/*=========================================
+BOTÃO FLUTUANTE WHATSAPP
+=========================================*/
+
 .whatsapp-float{
-    position: fixed;
-    right: 25px;
-    bottom: 25px;
-    width: 64px;
-    height: 64px;
-    border-radius: 50%;
-    background: #25D366;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    font-size: 34px;
-    text-decoration: none;
-    box-shadow: 0 8px 25px rgba(37,211,102,.45);
-    transition: .3s;
-    z-index: 9999;
+    position:fixed;
+    right:18px;
+    bottom:18px;
+    width:58px;
+    height:58px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    background:#25D366;
+    color:#fff;
+    text-decoration:none;
+    font-size:30px;
+    box-shadow:0 8px 20px rgba(37,211,102,.30);
+    transition:all .25s ease;
+    z-index:9999;
 }
 
 .whatsapp-float:hover{
-    transform: scale(1.08);
-    background: #20ba5a;
+    background:#20ba5a;
+    transform:translateY(-3px) scale(1.05);
+    box-shadow:0 12px 28px rgba(37,211,102,.45);
+}
+
+.whatsapp-float i{
+    line-height:1;
+}
+
+@media (max-width:768px){
+
+    .whatsapp-float{
+
+        width:56px;
+        height:56px;
+        right:16px;
+        bottom:16px;
+        font-size:28px;
+
+    }
+
 }
 
 /* ===== FOOTER ===== */

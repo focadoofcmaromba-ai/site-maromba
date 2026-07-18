@@ -1437,3 +1437,29 @@
     transform:translateY(-2px);
 
 }
+
+/*=========================================
+RESPIRO PARA BOTÃO FLUTUANTE
+=========================================*/
+
+@media (max-width:768px){
+
+    body{
+
+        padding-bottom:90px;
+
+    }
+
+}
+
+/*=========================================
+ESPAÇO PARA O BOTÃO FLUTUANTE
+=========================================*/
+
+@media (max-width:768px){
+
+    .produto-detalhes{
+        padding-bottom:120px;
+    }
+
+}
